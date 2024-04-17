@@ -1,0 +1,14 @@
+D:\GitHub\Realm-of-the-Eternal-Guardian\bin\Debug\Realm of the Eternal Guardian.exe.config
+D:\GitHub\Realm-of-the-Eternal-Guardian\bin\Debug\Realm of the Eternal Guardian.exe
+D:\GitHub\Realm-of-the-Eternal-Guardian\bin\Debug\Realm of the Eternal Guardian.pdb
+D:\GitHub\Realm-of-the-Eternal-Guardian\obj\Debug\Survive the Wasteland.csproj.AssemblyReference.cache
+D:\GitHub\Realm-of-the-Eternal-Guardian\obj\Debug\Survive the Wasteland.csproj.CoreCompileInputs.cache
+D:\GitHub\Realm-of-the-Eternal-Guardian\obj\Debug\Realm of the Eternal Guardian.exe
+D:\GitHub\Realm-of-the-Eternal-Guardian\obj\Debug\Realm of the Eternal Guardian.pdb
+D:\GitHub\Survive the Wasteland\bin\Debug\Realm of the Eternal Guardian.exe.config
+D:\GitHub\Survive the Wasteland\bin\Debug\Realm of the Eternal Guardian.exe
+D:\GitHub\Survive the Wasteland\bin\Debug\Realm of the Eternal Guardian.pdb
+D:\GitHub\Survive the Wasteland\obj\Debug\Survive the Wasteland.csproj.AssemblyReference.cache
+D:\GitHub\Survive the Wasteland\obj\Debug\Survive the Wasteland.csproj.CoreCompileInputs.cache
+D:\GitHub\Survive the Wasteland\obj\Debug\Realm of the Eternal Guardian.exe
+D:\GitHub\Survive the Wasteland\obj\Debug\Realm of the Eternal Guardian.pdb

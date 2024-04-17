@@ -1,0 +1,7 @@
+D:\GitHub\Realm of the Eternal Guradian\bin\Debug\Realm of the Eternal Guardian.exe.config
+D:\GitHub\Realm of the Eternal Guradian\bin\Debug\Realm of the Eternal Guardian.exe
+D:\GitHub\Realm of the Eternal Guradian\bin\Debug\Realm of the Eternal Guardian.pdb
+D:\GitHub\Realm of the Eternal Guradian\obj\Debug\Realm of the Eternal Guardian.csproj.AssemblyReference.cache
+D:\GitHub\Realm of the Eternal Guradian\obj\Debug\Realm of the Eternal Guardian.csproj.CoreCompileInputs.cache
+D:\GitHub\Realm of the Eternal Guradian\obj\Debug\Realm of the Eternal Guardian.exe
+D:\GitHub\Realm of the Eternal Guradian\obj\Debug\Realm of the Eternal Guardian.pdb
