@@ -15,6 +15,8 @@ namespace Survive_the_Wasteland
             game.Add(new InfestedForests());
             game.Add(new Wastelands());
             game.Add(new ToxicWasteDump());
+            game.Add(new Hospital());
+            
 
             while (!game.IsGameOver())
             {
