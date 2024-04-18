@@ -1,5 +1,4 @@
-﻿using Survive_the_Wasteland.Rooms;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +9,11 @@ namespace Survive_the_Wasteland.Rooms
 {
     internal class ToxicWasteDump : Room
     {
-       public static bool hasAWeapon = false;
+        private bool enteredCode = false;
+
+        public static bool hasAWeapon = false;
         private Random random = new Random();
+        private bool bladeFound = false;
 
         internal override string CreateDescription() => @"1. [survey] You take a moment to glance around, perhaps hoping to find something intriguing.
 2. [search] Scan your surroundings, hoping to discover any valuable items.
@@ -77,74 +79,85 @@ namespace Survive_the_Wasteland.Rooms
                     break;
                 case "search":
                 case "2":
-                    Console.WriteLine("You explore your surroundings, hoping to find something of worth, and come across a worn blade.\n");
-                    Console.WriteLine("\nWhile it currently doesn't appear to be functioning optimally, there might be someone with the skills to improve it.");
-                    Item blade = new Item("Worn Blade", "A blade, though not currently optimized for formal combat engagements");
-                    Game.playerInventory.AddItem(blade);
-                    hasAWeapon = true;
-                    Console.WriteLine("\n +1 Worn Blade");
+                    if (!bladeFound)
+                    {
+                        Console.WriteLine("You explore your surroundings, hoping to find something of worth, and come across a worn blade.\n");
+                        Console.WriteLine("\nWhile it currently doesn't appear to be functioning optimally, there might be someone with the skills to improve it.");
+                        Item blade = new Item("Worn Blade", "A blade, though not currently optimized for formal combat engagements");
+                        Game.playerInventory.AddItem(blade);
+                        hasAWeapon = true;
+                        Console.WriteLine("\n +1 Worn Blade");
+                    }
+                    else
+                    {
+                        Console.WriteLine("You've exhausted the discovery of valuable items in your immediate vicinity.");
+                    }
                     break;
                 case "structure":
                 case "3":
-                jump2: Console.Clear();
-                    Console.WriteLine("You encounter a sturdily constructed building with a keypad lock with a 5 digit code, prompting curiosity about where \none might procure the access code.");
-                    Console.WriteLine("Do you want to attempt the code?[y/n]");
-                    char yn = Convert.ToChar(Console.ReadLine());
-                    if (yn == 'y')
+                    if (!enteredCode)
                     {
-                        Console.Clear();
-                       jump3: Console.WriteLine("1. [Return] Leave the buidlings front entrance\n Please Enter Code: _ _ _ _ _");
-                        string option = Console.ReadLine();
-                        if (option == Hospital.generatedPassword)
+                    jump2: Console.Clear();
+                        Console.WriteLine("You encounter a sturdily constructed building with a keypad lock with a 5 digit code, prompting curiosity about where \none might procure the access code.");
+                        Console.WriteLine("Do you want to attempt the code?[y/n]");
+                        char yn = Convert.ToChar(Console.ReadLine());
+                        if (yn == 'y')
                         {
-                            Console.WriteLine("The code is correct. You unlock the door and enter the building.");
-                            Console.Write("Press \"Enter\" to continue...");
-                            Console.ReadKey();
                             Console.Clear();
-                            Console.WriteLine("You'll notice something akin to a Scuba tank, enhancing your ability to travel extended distances while ensuring a \ncontinuous supply of fresh air.");
-                            Item tank = new Item("Scuba Tank", "Enhancing your journey's reach, a scuba tank provides extended travel capabilities");
-                            Game.playerInventory.AddItem(tank);
-                            Console.WriteLine("\n +1 Scuba Tank");
-                            Console.Write("\nPress \"Enter\" to continue...");
-                            Console.ReadKey();
-                            Console.Clear();
-                            Console.WriteLine("1. [Return] Leave the building\n2. [search] Explore additional items that could be of utility. ");
-                            string choose = Console.ReadLine();
-                            switch (choose)
+                        jump3: Console.WriteLine("1. [Return] Leave the buidlings front entrance\n2. [inventory] Display your inventory.\n Please Enter Code: _ _ _ _ _\n--2");
+                            string option = Console.ReadLine();
+
+                            if (option == Hospital.generatedPassword)
                             {
-                                case "return":
-                                case "1":
-                                    Console.WriteLine("You leave the building.");
-                                    break;
-                                case "search":
-                                case "2":
-                                    Console.WriteLine("You discover no other noteworthy items within the premise.");
-                                    Console.WriteLine("You leave the building.");
-                                    break;
+                                Console.WriteLine("The code is correct. You unlock the door and enter the building.");
+                                enteredCode = true;
+                                Console.Write("Press \"Enter\" to continue...");
+                                Console.ReadKey();
+                                Console.Clear();
+                                Console.WriteLine("You'll notice something akin to a Scuba tank, enhancing your ability to travel extended distances while ensuring a \ncontinuous supply of fresh air.");
+                                Item tank = new Item("Scuba Tank", "Enhancing your journey's reach, a scuba tank provides extended travel capabilities");
+                                Game.playerInventory.AddItem(tank);
+                                Console.WriteLine("\n +1 Scuba Tank");
+                                Console.Write("\nPress \"Enter\" to continue...");
+                                Console.ReadKey();
+                                Console.Clear();
+                                Console.WriteLine("1. [Return] Leave the building.");
                             }
+                            else if (option == "return" || option == "1")
+                            {
+                                Console.Clear();
+                                Console.WriteLine("You have returned to the main location of the Toxtic Waste Dump");
+                            }
+                            else if (option == "inventory" || option == "2")
+                            {
+                                Console.WriteLine("You look inside your inventory.");
+                                Game.playerInventory.DisplayInventory();
+                                goto jump3;
+                            }
+                            else
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Incorrect code.");
+                                goto jump3;
+                            }
+
+
                         }
-                        else if (option == "return" || option == "1")
+                        else if (yn == 'n')
                         {
                             Console.Clear();
-                            Console.WriteLine("You have returned to the main location of the Toxtic Waste Dump");
+                            Console.WriteLine("You opt for a safer approach and choose not to pursue it.");
                         }
                         else
                         {
                             Console.Clear();
-                            Console.WriteLine("Incorrect code.");
-                            goto jump3;
+                            Console.WriteLine("Invalid Command");
+                            goto jump2;
                         }
-                    }
-                    else if (yn == 'n')
-                    {
-                        Console.Clear();
-                        Console.WriteLine("You opt for a safer approach and choose not to pursue it.");
                     }
                     else
                     {
-                        Console.Clear();
-                        Console.WriteLine("Invalid Command");
-                        goto jump2;
+                        Console.WriteLine("You've already entered the code and explored the building.");
                     }
                     break;
                 case "return":

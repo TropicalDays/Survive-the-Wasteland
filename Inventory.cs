@@ -27,8 +27,8 @@ namespace Survive_the_Wasteland
 
         public void DisplayInventory()
         {
-            Console.WriteLine("Inventory");
-            Console.WriteLine("-------------------------------");
+            Console.WriteLine("\t* Inventory *");
+            Console.WriteLine("------------------------------");
             foreach(Item item in items)
             {
                 Console.WriteLine($" - {item.Name}: {item.Description}");

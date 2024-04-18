@@ -6,7 +6,7 @@ namespace Survive_the_Wasteland.Rooms
 {
     internal class Location : Room
     {
-        private bool hasHazardEquipment = true;
+        public static bool hasHazardEquipment = false;
         private Random random = new Random();
 
         internal override string CreateDescription() => @"1. [infested forest] Dense woodlands teeming with hostile mutated creatures and hidden dangers.

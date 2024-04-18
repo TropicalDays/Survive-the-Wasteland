@@ -13,11 +13,13 @@ namespace Survive_the_Wasteland.Rooms
         Random range = new Random();
         internal static string generatedPassword;
         internal int count = 0;
+        private bool foundCode = false;
 
         internal override string CreateDescription() => @"1. [supplies] There might be medical supplies or useful items left behind.
 2. [wander] Consider conducting an examination of the expansive hospital premises to search for any potential survivors.
 3. [examine computer] Search the computer for any pertinent information.
-4. [return] Turn back to the Toxic Waste Dump main area.";
+4. [return] Turn back to the Toxic Waste Dump main area.
+5. [inventory] Display your inventory.";
 
         internal override void ReceiveChoice(string choice)
         {
@@ -33,22 +35,30 @@ namespace Survive_the_Wasteland.Rooms
                     break;
                 case "examine computer":
                 case "3":
-                    if (count == 0)
+                    if (!foundCode)
                     {
                         int password = range.Next(1, 100000);
                         generatedPassword = password.ToString("");
                         Console.WriteLine($"As you explore the accessible computer files, you come across a document labeled \"password,\" revealing a numeric entry: {generatedPassword}.");
-                        count++;
+                        Item passwordInt = new Item("Password", $"A password consisting of digits ({generatedPassword}) for an unspecified location");
+                        Game.playerInventory.AddItem(passwordInt);
+                        Console.WriteLine("\n +1 Password");
+                        foundCode = true;
                     }
                     else
                     {
-                        Console.WriteLine($"As you explore the accessible computer files, you come across a document labeled \"password,\" revealing a numeric entry: {generatedPassword}.");
+                        Console.WriteLine($"Beyond what's essential, there aren't any significant contents within the computer.");
                     }
                     break;
                 case "return":
                 case "4":
                     Console.WriteLine("You return back to the Toxic Waste Dump.");
                     Game.Transition<ToxicWasteDump>();
+                    break;
+                case "inventory":
+                case "5":
+                    Console.WriteLine("You look inside your inventory.");
+                    Game.playerInventory.DisplayInventory();
                     break;
                 default:
                     Console.WriteLine("Invalid command.");

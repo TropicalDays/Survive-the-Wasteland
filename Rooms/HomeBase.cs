@@ -10,10 +10,10 @@ namespace Survive_the_Wasteland.Rooms
     internal class HomeBase : Room
     {
         internal override string CreateDescription() => @"1. [rest] at the worn-out cot to regain your strength.
-2. [manage inventory] by accessing the storage chest to deposit or withdraw items.
-3. [craft] useful items at the makeshift workbench using gathered resources.
-4. [location] Explore your next journey outside your Home Base.
-5. [save progress] by laying down on the makeshift bed, hoping for a moment's respite.";
+2. [craft] useful items at the makeshift workbench using gathered resources.
+3. [location] Explore your next journey outside your Home Base.
+4. [save progress] by laying down on the makeshift bed, hoping for a moment's respite.
+5. [inventory] Display your inventory.";
 
 
         internal override void ReceiveChoice(string choice)
@@ -21,15 +21,17 @@ namespace Survive_the_Wasteland.Rooms
             switch (choice)
             {
                 case "location":
-                    Console.WriteLine("Select your next location.");
-                    Game.Transition<Location>();
-                    break;
-                case "4":
+                case "3":
                     Console.WriteLine("Select your next location.");
                     Game.Transition<Location>();
                     break;
                 case "2314":
                     Console.WriteLine("The chest opens and you get a key.");
+                    break;
+                case "inventory":
+                case "5":
+                    Console.WriteLine("You look inside your inventory.");
+                    Game.playerInventory.DisplayInventory();
                     break;
                 default:
                     Console.WriteLine("Invalid command.");
