@@ -1,6 +1,5 @@
 ﻿using Survive_the_Wasteland.Rooms;
 using Survive_the_Wasteland;
-using Survive_the_Wasteland.Rooms;
 using System;
 
 namespace Survive_the_Wasteland

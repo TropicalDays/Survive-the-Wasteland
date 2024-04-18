@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Item.cs" />
+    <Compile Include="Inventory.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="Program.cs" />

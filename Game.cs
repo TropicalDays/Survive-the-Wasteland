@@ -6,6 +6,8 @@ namespace Survive_the_Wasteland
 {
     internal class Game
     {
+        public static Inventory playerInventory = new Inventory();
+
         List<Room> rooms = new List<Room>();
         Room currentRoom;
         internal bool IsGameOver() => isFinished;

@@ -1,5 +1,4 @@
 ﻿using Survive_the_Wasteland.Rooms;
-using Survive_the_Wasteland.Rooms;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,14 +10,14 @@ namespace Survive_the_Wasteland.Rooms
 {
     internal class ToxicWasteDump : Room
     {
-        bool unlockedDoor = false;
-        bool hasAWeapon = true;
+       public static bool hasAWeapon = false;
         private Random random = new Random();
 
         internal override string CreateDescription() => @"1. [survey] You take a moment to glance around, perhaps hoping to find something intriguing.
 2. [search] Scan your surroundings, hoping to discover any valuable items.
 3. [structure] Stroll over to a quaint structure nestled by the waterfront.
-4. [return] Return back to your Home Base";
+4. [return] Return back to your Home Base
+5. [inventory] Display your inventory";
 
         internal override void ReceiveChoice(string choice)
         {
@@ -79,10 +78,11 @@ namespace Survive_the_Wasteland.Rooms
                 case "search":
                 case "2":
                     Console.WriteLine("You explore your surroundings, hoping to find something of worth, and come across a worn blade.\n");
-                    Console.Write("Press \"Enter\" to continue...");
-                    Console.ReadKey();
-                    Console.Clear();
-                    Console.WriteLine("While it currently doesn't appear to be functioning optimally, there might be someone with the skills to improve it.");
+                    Console.WriteLine("\nWhile it currently doesn't appear to be functioning optimally, there might be someone with the skills to improve it.");
+                    Item blade = new Item("Worn Blade", "A blade, though not currently optimized for formal combat engagements");
+                    Game.playerInventory.AddItem(blade);
+                    hasAWeapon = true;
+                    Console.WriteLine("\n +1 Worn Blade");
                     break;
                 case "structure":
                 case "3":
@@ -98,12 +98,14 @@ namespace Survive_the_Wasteland.Rooms
                         if (option == Hospital.generatedPassword)
                         {
                             Console.WriteLine("The code is correct. You unlock the door and enter the building.");
-                            unlockedDoor = true;
                             Console.Write("Press \"Enter\" to continue...");
                             Console.ReadKey();
                             Console.Clear();
                             Console.WriteLine("You'll notice something akin to a Scuba tank, enhancing your ability to travel extended distances while ensuring a \ncontinuous supply of fresh air.");
-                            Console.Write("Press \"Enter\" to continue...");
+                            Item tank = new Item("Scuba Tank", "Enhancing your journey's reach, a scuba tank provides extended travel capabilities");
+                            Game.playerInventory.AddItem(tank);
+                            Console.WriteLine("\n +1 Scuba Tank");
+                            Console.Write("\nPress \"Enter\" to continue...");
                             Console.ReadKey();
                             Console.Clear();
                             Console.WriteLine("1. [Return] Leave the building\n2. [search] Explore additional items that could be of utility. ");
@@ -149,6 +151,11 @@ namespace Survive_the_Wasteland.Rooms
                 case "4":
                     Console.WriteLine("You return to the Home Base");
                     Game.Transition<HomeBase>();
+                    break;
+                case "inventory":
+                case "5":
+                    Console.WriteLine("You look inside your inventory.");
+                    Game.playerInventory.DisplayInventory();
                     break;
                 default:
                     Console.WriteLine("Invalid command.");
