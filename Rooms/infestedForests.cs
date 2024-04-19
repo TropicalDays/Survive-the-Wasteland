@@ -12,10 +12,10 @@ namespace Survive_the_Wasteland.Rooms
         bool haveEquipment = false;
         private bool seedFound = false;
 
-        internal override string CreateDescription() => @"1. [proceed deeper]: Venture further into the unknown, risking encounters with hostile creatures.
-2. [search]: Scour the undergrowth for useful items amidst the tangled vegetation.
-3. [listen]: Tune your ears to the forest sounds, hoping to discern any potential threats or opportunities.
-4. [return]: Return back to your Home Base.
+        internal override string CreateDescription() => @"1. [proceed deeper]: 6 hour, Venture further into the unknown, risking encounters with hostile creatures.
+2. [search] 20 minutes, Scour the undergrowth for useful items amidst the tangled vegetation.
+3. [listen] Tune your ears to the forest sounds, hoping to discern any potential threats or opportunities.
+4. [return] 1 hour, Return back to your Home Base.
 5. [inventory] Display your inventory.";
 
         internal override void ReceiveChoice(string choice)
@@ -25,6 +25,18 @@ namespace Survive_the_Wasteland.Rooms
             {
                 case "return":
                 case "4":
+                    if (!ToxicWasteDump.injuredLeg)
+                    {
+                        Program.initialVulnerability -= TimeSpan.FromMinutes(1);
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write("\t(Injured Leg) Travel time x0.5\n\n");
+                        Console.ResetColor();
+                        Program.initialVulnerability -= TimeSpan.FromMinutes(1);
+                        Program.initialVulnerability -= TimeSpan.FromSeconds(30);
+                    }
                     Console.WriteLine("You return to your Home Base.");
                     Game.Transition<HomeBase>();
                     break;
@@ -32,15 +44,19 @@ namespace Survive_the_Wasteland.Rooms
                 case "2":
                     if (!seedFound)
                     {
+                        Program.initialVulnerability -= TimeSpan.FromSeconds(20);
                         Console.WriteLine("Discover a treasure trove of potentially fertile seeds, ripe for cultivation.");
                         Item seed = new Item("Fertile Seed", "Perhaps there's a glimmer of hope for a few.");
                         Game.playerInventory.AddItem(seed);
+                        Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine("\n +1 Fertile Seed");
+                        Console.ResetColor();
                         seedFound = true;
                     }
                     else
                     {
-                        Console.WriteLine("The dense foliage yields no further discoveries.");
+                        Program.initialVulnerability -= TimeSpan.FromSeconds(5);
+                        Console.WriteLine("You search the dense foliage yet it yields no further discoveries.");
                     }
                     break;
                 case "listen":
@@ -85,12 +101,13 @@ namespace Survive_the_Wasteland.Rooms
                     break;
                 case "proceed deeper":
                 case "1":
-                    if (haveEquipment == false)
+                    if (!haveEquipment)
                     {
                         Console.WriteLine("Perhaps considering your current equipment, it might be prudent to hold off on venturing farther. However, with the\n acquisition of suitable gear, you could potentially uncover promising rewards.");
                     }
                     else
                     {
+                        Program.initialVulnerability -= TimeSpan.FromMinutes(6);
                         Console.WriteLine("you reach the end of your quest something something");
                     }
                     break;

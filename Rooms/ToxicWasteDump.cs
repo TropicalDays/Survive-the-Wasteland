@@ -11,14 +11,16 @@ namespace Survive_the_Wasteland.Rooms
     {
         private bool enteredCode = false;
 
-        public static bool hasAWeapon = false;
         private Random random = new Random();
-        private bool bladeFound = false;
+        private bool wornBladeFound = false;
+        public static bool injuredLeg = false;
+
+        
 
         internal override string CreateDescription() => @"1. [survey] You take a moment to glance around, perhaps hoping to find something intriguing.
-2. [search] Scan your surroundings, hoping to discover any valuable items.
-3. [structure] Stroll over to a quaint structure nestled by the waterfront.
-4. [return] Return back to your Home Base
+2. [search] 15 minutes, Scan your surroundings, hoping to discover any valuable items.
+3. [structure] 5 minutes, Stroll over to a quaint structure nestled by the waterfront.
+4. [return] 1 hour, Return back to your Home Base
 5. [inventory] Display your inventory";
 
         internal override void ReceiveChoice(string choice)
@@ -34,10 +36,11 @@ namespace Survive_the_Wasteland.Rooms
                     char answer = Convert.ToChar(Console.ReadLine());
                     if (answer == 'y')
                     {
-                        if (hasAWeapon)
+                        if (wornBladeFound)
                         {
                             Console.Clear();
                             Console.WriteLine("You bravely engage the mutant creature and emerge victorious, though not unscathed. It appears you may have\n sustained a minor injury to your leg. Exercise caution as you proceed.\n");
+                            injuredLeg = true;
                         jump3: Console.WriteLine("--");
                             Console.WriteLine("Do you wish to proceed at this time?[y/n]");
                             char proceed = Convert.ToChar(Console.ReadLine());
@@ -79,14 +82,17 @@ namespace Survive_the_Wasteland.Rooms
                     break;
                 case "search":
                 case "2":
-                    if (!bladeFound)
+                    if (!wornBladeFound)
                     {
+                        Program.initialVulnerability -= TimeSpan.FromSeconds(15);
                         Console.WriteLine("You explore your surroundings, hoping to find something of worth, and come across a worn blade.\n");
                         Console.WriteLine("\nWhile it currently doesn't appear to be functioning optimally, there might be someone with the skills to improve it.");
                         Item blade = new Item("Worn Blade", "A blade, though not currently optimized for formal combat engagements");
                         Game.playerInventory.AddItem(blade);
-                        hasAWeapon = true;
+                        wornBladeFound = true;
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("\n +1 Worn Blade");
+                        Console.ResetColor();
                     }
                     else
                     {
@@ -97,6 +103,7 @@ namespace Survive_the_Wasteland.Rooms
                 case "3":
                     if (!enteredCode)
                     {
+                        Program.initialVulnerability -= TimeSpan.FromSeconds(5);
                     jump2: Console.Clear();
                         Console.WriteLine("You encounter a sturdily constructed building with a keypad lock with a 5 digit code, prompting curiosity about where \none might procure the access code.");
                         Console.WriteLine("Do you want to attempt the code?[y/n]");
@@ -117,7 +124,9 @@ namespace Survive_the_Wasteland.Rooms
                                 Console.WriteLine("You'll notice something akin to a Scuba tank, enhancing your ability to travel extended distances while ensuring a \ncontinuous supply of fresh air.");
                                 Item tank = new Item("Scuba Tank", "Enhancing your journey's reach, a scuba tank provides extended travel capabilities");
                                 Game.playerInventory.AddItem(tank);
+                                Console.ForegroundColor = ConsoleColor.Yellow;
                                 Console.WriteLine("\n +1 Scuba Tank");
+                                Console.ResetColor();
                                 Console.Write("\nPress \"Enter\" to continue...");
                                 Console.ReadKey();
                                 Console.Clear();
@@ -162,6 +171,18 @@ namespace Survive_the_Wasteland.Rooms
                     break;
                 case "return":
                 case "4":
+                    if (!injuredLeg)
+                    {
+                        Program.initialVulnerability -= TimeSpan.FromMinutes(1);
+                    }
+                    else
+                    {
+                        Console.ForegroundColor= ConsoleColor.Red;
+                        Console.Write("\t(Injured Leg) Travel time x0.5\n\n");
+                        Console.ResetColor();
+                        Program.initialVulnerability -= TimeSpan.FromMinutes(1);
+                        Program.initialVulnerability -= TimeSpan.FromSeconds(30);
+                    }
                     Console.WriteLine("You return to the Home Base");
                     Game.Transition<HomeBase>();
                     break;

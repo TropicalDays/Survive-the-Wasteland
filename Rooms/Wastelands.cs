@@ -11,10 +11,10 @@ namespace Survive_the_Wasteland.Rooms
         private bool repairKitFound = false;
         private bool suitAndGasMaskFound = false;
 
-        internal override string CreateDescription() => @"1. [Search] Scour the wasteland for valuable resources amidst the toxic hazards.
-2. [investigate] Approach the decrepit building to see if there are any salvageable items or clues inside.
+        internal override string CreateDescription() => @"1. [Search] 15 minutes, Scour the wasteland for valuable resources amidst the toxic hazards.
+2. [investigate] 15 minutes, Approach the decrepit building to see if there are any salvageable items or clues inside.
 3. [survey] Take a moment to assess your surroundings for potential threats or hidden treasures.
-4. [return] Return back to your Home Base.
+4. [return] 30 minutes, Return back to your Home Base.
 5. [inventory] Display your inventory";
 
         internal override void ReceiveChoice(string choice)
@@ -25,10 +25,14 @@ namespace Survive_the_Wasteland.Rooms
                 case "1":
                     if (!repairKitFound)
                     {
+                        Program.initialVulnerability -= TimeSpan.FromSeconds(15);
                         Console.WriteLine("Exploring the wasteland, you stumble upon a repair kit, essential for restoring any broken equipment you may encounter.");
                         Item medkit = new Item("Repair Kit", "Restores broken equipment.");
                         Game.playerInventory.AddItem(medkit);
+                        repairKitFound =true;
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("\n +1 Repair Kit!");
+                        Console.ResetColor();
                     }
                     else
                     {
@@ -39,14 +43,18 @@ namespace Survive_the_Wasteland.Rooms
                 case "2":
                     if (!suitAndGasMaskFound)
                     {
+                        Program.initialVulnerability -= TimeSpan.FromSeconds(15);
                         Console.WriteLine("As you explore the aging structure, you discover essential protective gear like a hazmat suit and gas mask, which could\n be valuable for further exploration in other locations.");
                         Item hazmatSuit = new Item("Hazmat Suit", "Provides a safeguard against potentially contaminated environments.");
                         Game.playerInventory.AddItem(hazmatSuit);
                         Item gasMask = new Item("Gas Mask", "Enables you to comfortably breathe in specific zones.");
                         Game.playerInventory.AddItem(gasMask);
                         Location.hasHazardEquipment = true;
+                        suitAndGasMaskFound = true; 
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("\n +1 Gas Mask!");
                         Console.WriteLine("\n +1 Hazmat Suit!");
+                        Console.ResetColor();
                     }
                     else
                     {
@@ -59,8 +67,19 @@ namespace Survive_the_Wasteland.Rooms
                     break;
                 case "home base":
                 case "4":
-                    Console.WriteLine("You return back to your Home Base.");
                     Game.Transition<HomeBase>();
+                    if (!ToxicWasteDump.injuredLeg)
+                    {
+                        Program.initialVulnerability -= TimeSpan.FromSeconds(30);
+                    }
+                    else
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write("\t(Injured Leg) Travel time x0.5\n\n");
+                        Console.ResetColor();
+                        Program.initialVulnerability -= TimeSpan.FromSeconds(45);
+                    }
+                    Console.WriteLine("You return back to your Home Base.");
                     break;
                 case "inventory":
                 case "5":

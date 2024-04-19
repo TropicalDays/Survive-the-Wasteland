@@ -6,6 +6,8 @@ using System;
 internal class Program
 {
     public static bool isProtecting = false;
+    public static TimeSpan initialVulnerability = TimeSpan.FromMinutes(4);
+    public static Stopwatch stopwatch = new Stopwatch();
 
     static void Main(string[] args)
     {
@@ -17,20 +19,43 @@ internal class Program
         game.Add(new ToxicWasteDump());
         game.Add(new Hospital());
 
-        Stopwatch stopwatch = new Stopwatch();
-        TimeSpan initialAir = TimeSpan.FromHours(2);
 
         stopwatch.Start();
 
         while (!game.IsGameOver())
         {
-            TimeSpan remainingAir = initialAir - (isProtecting ? TimeSpan.FromTicks(stopwatch.Elapsed.Ticks * 2) : stopwatch.Elapsed);
+            TimeSpan remainingVulnerability = initialVulnerability - (isProtecting ? TimeSpan.FromTicks(stopwatch.Elapsed.Ticks * 2) : stopwatch.Elapsed);
             Console.WriteLine("\n--------------------------------------------");
-            Console.WriteLine($"Air left: {remainingAir.Hours}h {remainingAir.Minutes}m {remainingAir.Seconds}s\n");
+            if (remainingVulnerability.Minutes >= 2)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.WriteLine($"Infected Timer: {remainingVulnerability.Minutes}h {remainingVulnerability.Seconds}m \n");
+                Console.ResetColor();
+            }
+            else if (remainingVulnerability.Minutes >= 2 && isProtecting)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.WriteLine($"Infected Timer: {remainingVulnerability.Minutes}h {remainingVulnerability.Seconds}m x2 leaking speed\n");
+                Console.ResetColor();
+            }
+            else if (remainingVulnerability.Minutes < 2 && !isProtecting)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine($"Infected Timer: {remainingVulnerability.Minutes}h {remainingVulnerability.Seconds}m\n");
+                Console.ResetColor();
+            }
+            else if (remainingVulnerability.Minutes < 2 && isProtecting)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine($"Infected Timer: {remainingVulnerability.Minutes}h {remainingVulnerability.Seconds}m x2 leaking speed\n");
+                Console.ResetColor();
+            }
             Console.WriteLine(game.CurrentRoomDescription);
             string choice = Console.ReadLine()?.ToLower() ?? "";
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             game.ReceiveChoice(choice);
+            Console.ResetColor();
         }
 
         stopwatch.Stop();
@@ -42,4 +67,5 @@ internal class Program
         Console.WriteLine("END");
         Console.ReadLine();
     }
+
 }

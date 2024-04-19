@@ -1,6 +1,7 @@
 ﻿using Survive_the_Wasteland.Rooms;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,13 +21,16 @@ namespace Survive_the_Wasteland.Rooms
         {
             switch (choice)
             {
+                case "rest":
+                case "1":
+                    Program.stopwatch = Stopwatch.StartNew();
+                    Program.initialVulnerability = TimeSpan.FromMinutes(4);
+                    Console.WriteLine("You rest and regain your invulnerability to the infection once more.");
+                    break;
                 case "location":
                 case "3":
                     Console.WriteLine("Select your next location.");
                     Game.Transition<Location>();
-                    break;
-                case "2314":
-                    Console.WriteLine("The chest opens and you get a key.");
                     break;
                 case "inventory":
                 case "5":

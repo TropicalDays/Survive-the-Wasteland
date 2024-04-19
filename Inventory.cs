@@ -27,12 +27,17 @@ namespace Survive_the_Wasteland
 
         public void DisplayInventory()
         {
-            Console.WriteLine("\t* Inventory *");
-            Console.WriteLine("------------------------------");
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("\n\t Inventory ");
+            Console.WriteLine("----------------------------");
+            Console.ResetColor();
             foreach(Item item in items)
             {
                 Console.WriteLine($" - {item.Name}: {item.Description}");
             }
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("----------------------------");
+            Console.ResetColor();
         }
     }
 }
