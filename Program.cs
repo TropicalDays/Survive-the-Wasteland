@@ -18,7 +18,10 @@ internal class Program
         game.Add(new Wastelands());
         game.Add(new ToxicWasteDump());
         game.Add(new Hospital());
+        game.Add(new NPC());
 
+        game.Add(new Medic("Dr. Lith"));
+        game.Add(new Gardener("Eyva"));
 
         stopwatch.Start();
 
@@ -26,28 +29,28 @@ internal class Program
         {
             TimeSpan remainingVulnerability = initialVulnerability - (isProtecting ? TimeSpan.FromTicks(stopwatch.Elapsed.Ticks * 2) : stopwatch.Elapsed);
             Console.WriteLine("\n--------------------------------------------");
-            if (remainingVulnerability.Minutes >= 2)
-            {
-                Console.ForegroundColor = ConsoleColor.DarkCyan;
-                Console.WriteLine($"Infected Timer: {remainingVulnerability.Minutes}h {remainingVulnerability.Seconds}m \n");
-                Console.ResetColor();
-            }
-            else if (remainingVulnerability.Minutes >= 2 && isProtecting)
+            if (isProtecting && remainingVulnerability.Minutes >= 2)
             {
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.WriteLine($"Infected Timer: {remainingVulnerability.Minutes}h {remainingVulnerability.Seconds}m x2 leaking speed\n");
                 Console.ResetColor();
             }
-            else if (remainingVulnerability.Minutes < 2 && !isProtecting)
+            else if (isProtecting && remainingVulnerability.Minutes < 2)
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
+                Console.WriteLine($"Infected Timer: {remainingVulnerability.Minutes}h {remainingVulnerability.Seconds}m x2 leaking speed\n");
+                Console.ResetColor();
+            }
+            else if (remainingVulnerability.Minutes >= 2)
+            {
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.WriteLine($"Infected Timer: {remainingVulnerability.Minutes}h {remainingVulnerability.Seconds}m\n");
                 Console.ResetColor();
             }
-            else if (remainingVulnerability.Minutes < 2 && isProtecting)
+            else if (remainingVulnerability.Minutes < 2)
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine($"Infected Timer: {remainingVulnerability.Minutes}h {remainingVulnerability.Seconds}m x2 leaking speed\n");
+                Console.WriteLine($"Infected Timer: {remainingVulnerability.Minutes}h {remainingVulnerability.Seconds}m\n");
                 Console.ResetColor();
             }
             Console.WriteLine(game.CurrentRoomDescription);

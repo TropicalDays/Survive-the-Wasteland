@@ -73,6 +73,7 @@ namespace Survive_the_Wasteland.Rooms
                         {
                             Console.Clear();
                             Console.WriteLine("You safeguard the individual by confronting the critter, albeit at the expense of your gasmask's condition\n (it seems to be leaking quicker then normal), and receive recognition for your efforts.");
+                            
                             Program.isProtecting = true;
                         }
                         else if (decision == "unfold")

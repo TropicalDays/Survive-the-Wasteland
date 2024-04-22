@@ -6,7 +6,7 @@ namespace Survive_the_Wasteland.Rooms
 {
     internal class Location : Room
     {
-        public static bool hasHazardEquipment = false;
+        public static bool hasHazardEquipment = true;
         private Random random = new Random();
 
         internal override string CreateDescription() => @"1. [infested forest] 1 1/2hour, Dense woodlands teeming with hostile mutated creatures and hidden 

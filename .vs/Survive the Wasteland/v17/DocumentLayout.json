@@ -3,20 +3,44 @@
   "WorkspaceRootPath": "D:\\GitHub\\Survive-the-Wasteland\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|d:\\github\\survive-the-wasteland\\npc\u0027s\\npc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|solutionrelative:npc\u0027s\\npc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|D:\\GitHub\\Survive-the-Wasteland\\rooms\\homebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|solutionrelative:rooms\\homebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|D:\\GitHub\\Survive-the-Wasteland\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|solutionrelative:game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|d:\\github\\survive-the-wasteland\\npc\u0027s\\gardener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|solutionrelative:npc\u0027s\\gardener.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|D:\\GitHub\\Survive-the-Wasteland\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|d:\\github\\survive-the-wasteland\\rooms\\toxicwastedump.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|solutionrelative:rooms\\toxicwastedump.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|D:\\GitHub\\Survive-the-Wasteland\\rooms\\wastelands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|solutionrelative:rooms\\wastelands.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|d:\\github\\survive-the-wasteland\\npc\u0027s\\medic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|solutionrelative:npc\u0027s\\medic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|D:\\GitHub\\Survive-the-Wasteland\\rooms\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|solutionrelative:rooms\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|D:\\GitHub\\Survive-the-Wasteland\\rooms\\hospital.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|solutionrelative:rooms\\hospital.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|D:\\GitHub\\Survive-the-Wasteland\\rooms\\toxicwastedump.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|solutionrelative:rooms\\toxicwastedump.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|D:\\GitHub\\Survive-the-Wasteland\\rooms\\infestedforests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,26 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|D:\\GitHub\\Survive-the-Wasteland\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|solutionrelative:room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|D:\\GitHub\\Survive-the-Wasteland\\rooms\\hospital.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|solutionrelative:rooms\\hospital.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|D:\\GitHub\\Survive-the-Wasteland\\rooms\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|solutionrelative:rooms\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|D:\\GitHub\\Survive-the-Wasteland\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|solutionrelative:game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|D:\\GitHub\\Survive-the-Wasteland\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|solutionrelative:inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|D:\\GitHub\\Survive-the-Wasteland\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E6E359BD-8085-439F-95E4-5A95660A0D29}|Survive the Wasteland.csproj|solutionrelative:item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
@@ -64,7 +68,7 @@
               "RelativeDocumentMoniker": "Rooms\\Location.cs",
               "ToolTip": "D:\\GitHub\\Survive-the-Wasteland\\Rooms\\Location.cs",
               "RelativeToolTip": "Rooms\\Location.cs",
-              "ViewState": "AQIAADYAAAAAAAAAAAAAAAgAAAA1AAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAACsAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-17T13:03:42.634Z",
               "IsPinned": true,
@@ -72,13 +76,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "HomeBase.cs",
               "DocumentMoniker": "D:\\GitHub\\Survive-the-Wasteland\\Rooms\\HomeBase.cs",
               "RelativeDocumentMoniker": "Rooms\\HomeBase.cs",
               "ToolTip": "D:\\GitHub\\Survive-the-Wasteland\\Rooms\\HomeBase.cs",
               "RelativeToolTip": "Rooms\\HomeBase.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAAABgAAAAZAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABAAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-17T13:03:39.607Z",
               "IsPinned": true,
@@ -86,27 +90,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "ToxicWasteDump.cs",
               "DocumentMoniker": "D:\\GitHub\\Survive-the-Wasteland\\Rooms\\ToxicWasteDump.cs",
               "RelativeDocumentMoniker": "Rooms\\ToxicWasteDump.cs",
               "ToolTip": "D:\\GitHub\\Survive-the-Wasteland\\Rooms\\ToxicWasteDump.cs",
               "RelativeToolTip": "Rooms\\ToxicWasteDump.cs",
-              "ViewState": "AQIAAEkAAAAAAAAAAAAAAGwAAAAqAAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAAAAAGwAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-17T13:03:43.147Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Wastelands.cs",
               "DocumentMoniker": "D:\\GitHub\\Survive-the-Wasteland\\Rooms\\Wastelands.cs",
               "RelativeDocumentMoniker": "Rooms\\Wastelands.cs",
               "ToolTip": "D:\\GitHub\\Survive-the-Wasteland\\Rooms\\Wastelands.cs",
               "RelativeToolTip": "Rooms\\Wastelands.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAB8AAAAtAAAA",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAAAF8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-17T13:03:43.757Z",
               "IsPinned": true,
@@ -114,27 +117,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "infestedForests.cs",
               "DocumentMoniker": "D:\\GitHub\\Survive-the-Wasteland\\Rooms\\infestedForests.cs",
               "RelativeDocumentMoniker": "Rooms\\infestedForests.cs",
               "ToolTip": "D:\\GitHub\\Survive-the-Wasteland\\Rooms\\infestedForests.cs",
               "RelativeToolTip": "Rooms\\infestedForests.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACcAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEsAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-17T13:03:42.041Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Hospital.cs",
               "DocumentMoniker": "D:\\GitHub\\Survive-the-Wasteland\\Rooms\\Hospital.cs",
               "RelativeDocumentMoniker": "Rooms\\Hospital.cs",
               "ToolTip": "D:\\GitHub\\Survive-the-Wasteland\\Rooms\\Hospital.cs",
               "RelativeToolTip": "Rooms\\Hospital.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAACYAAAAZAAAA",
+              "ViewState": "AQIAACgAAAAAAAAAAAAAAEkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-17T13:53:20.269Z",
               "IsPinned": true,
@@ -142,41 +144,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Room.cs",
-              "DocumentMoniker": "D:\\GitHub\\Survive-the-Wasteland\\Room.cs",
-              "RelativeDocumentMoniker": "Room.cs",
-              "ToolTip": "D:\\GitHub\\Survive-the-Wasteland\\Room.cs",
-              "RelativeToolTip": "Room.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T13:03:45.512Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Game.cs",
-              "DocumentMoniker": "D:\\GitHub\\Survive-the-Wasteland\\Game.cs",
-              "RelativeDocumentMoniker": "Game.cs",
-              "ToolTip": "D:\\GitHub\\Survive-the-Wasteland\\Game.cs",
-              "RelativeToolTip": "Game.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC0AAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-17T13:03:44.465Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\GitHub\\Survive-the-Wasteland\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\GitHub\\Survive-the-Wasteland\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAAD4AAAAYAAAA",
+              "ViewState": "AQIAACkAAAAAAAAAAAAAAEoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-17T13:03:45.001Z",
               "IsPinned": true,
@@ -184,34 +158,71 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Inventory.cs",
-              "DocumentMoniker": "D:\\GitHub\\Survive-the-Wasteland\\Inventory.cs",
-              "RelativeDocumentMoniker": "Inventory.cs",
-              "ToolTip": "D:\\GitHub\\Survive-the-Wasteland\\Inventory.cs",
-              "RelativeToolTip": "Inventory.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAB4AAAAhAAAA",
+              "DocumentIndex": 3,
+              "Title": "Gardener.cs",
+              "DocumentMoniker": "D:\\GitHub\\Survive-the-Wasteland\\NPC\u0027s\\Gardener.cs",
+              "RelativeDocumentMoniker": "NPC\u0027s\\Gardener.cs",
+              "ToolTip": "D:\\GitHub\\Survive-the-Wasteland\\NPC\u0027s\\Gardener.cs",
+              "RelativeToolTip": "NPC\u0027s\\Gardener.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-18T03:50:43.612Z",
-              "IsPinned": true,
+              "WhenOpened": "2024-04-21T01:01:38.319Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Item.cs",
-              "DocumentMoniker": "D:\\GitHub\\Survive-the-Wasteland\\Item.cs",
-              "RelativeDocumentMoniker": "Item.cs",
-              "ToolTip": "D:\\GitHub\\Survive-the-Wasteland\\Item.cs",
-              "RelativeToolTip": "Item.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-18T03:51:23.125Z",
-              "IsPinned": true
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Game.cs",
+              "DocumentMoniker": "D:\\GitHub\\Survive-the-Wasteland\\Game.cs",
+              "RelativeDocumentMoniker": "Game.cs",
+              "ToolTip": "D:\\GitHub\\Survive-the-Wasteland\\Game.cs",
+              "RelativeToolTip": "Game.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T23:18:06.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NPC.cs",
+              "DocumentMoniker": "D:\\GitHub\\Survive-the-Wasteland\\NPC\u0027s\\NPC.cs",
+              "RelativeDocumentMoniker": "NPC\u0027s\\NPC.cs",
+              "ToolTip": "D:\\GitHub\\Survive-the-Wasteland\\NPC\u0027s\\NPC.cs",
+              "RelativeToolTip": "NPC\u0027s\\NPC.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAAADsAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T20:50:25.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Room.cs",
+              "DocumentMoniker": "D:\\GitHub\\Survive-the-Wasteland\\Room.cs",
+              "RelativeDocumentMoniker": "Room.cs",
+              "ToolTip": "D:\\GitHub\\Survive-the-Wasteland\\Room.cs",
+              "RelativeToolTip": "Room.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-19T21:08:39.707Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Medic.cs",
+              "DocumentMoniker": "D:\\GitHub\\Survive-the-Wasteland\\NPC\u0027s\\Medic.cs",
+              "RelativeDocumentMoniker": "NPC\u0027s\\Medic.cs",
+              "ToolTip": "D:\\GitHub\\Survive-the-Wasteland\\NPC\u0027s\\Medic.cs",
+              "RelativeToolTip": "NPC\u0027s\\Medic.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-21T00:42:51.412Z",
+              "EditorCaption": ""
             }
           ]
         }
