@@ -12,7 +12,7 @@ internal class Program
     static void Main(string[] args)
     {
         var game = new Game();
-        game.Add(new HomeBase());
+        game.Add(new HomeBase(game));
         game.Add(new Location());
         game.Add(new InfestedForests());
         game.Add(new Wastelands());
@@ -25,6 +25,20 @@ internal class Program
 
         stopwatch.Start();
 
+        RunGameLoop(game);
+
+        stopwatch.Stop();
+
+        TimeSpan elapsedTime = stopwatch.Elapsed;
+
+        Console.WriteLine($"Total time elapsed: {elapsedTime}");
+
+        Console.WriteLine("END");
+        Console.ReadLine();
+    }
+
+    static void RunGameLoop(Game game)
+    {
         while (!game.IsGameOver())
         {
             TimeSpan remainingVulnerability = initialVulnerability - (isProtecting ? TimeSpan.FromTicks(stopwatch.Elapsed.Ticks * 2) : stopwatch.Elapsed);
@@ -60,15 +74,6 @@ internal class Program
             game.ReceiveChoice(choice);
             Console.ResetColor();
         }
-
-        stopwatch.Stop();
-
-        TimeSpan elapsedTime = stopwatch.Elapsed;
-
-        Console.WriteLine($"Total time elapsed: {elapsedTime}");
-
-        Console.WriteLine("END");
-        Console.ReadLine();
     }
 
 }

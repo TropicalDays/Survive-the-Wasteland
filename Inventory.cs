@@ -20,9 +20,14 @@ namespace Survive_the_Wasteland
             items.Add(item);
         }
 
-        public void RemoveItem(Item item) 
+        public void RemoveItem(Item item)
         {
             items.Remove(item);
+        }
+
+        public List<Item> GetItems()
+        {
+            return items;
         }
 
         public void DisplayInventory()

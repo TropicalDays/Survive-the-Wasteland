@@ -15,6 +15,12 @@ internal class NPC : Room
     public string Name { get; set; }
     public NPCType Type { get; set; }
 
+    internal override void ReceiveChoice(string choice)
+    {
+        Introduce();
+        Dialog();
+        Interact(choice);
+    }
     public NPC(string name = "Unknown", NPCType type = NPCType.Scavenger)
     {
         Name = name;
@@ -66,10 +72,4 @@ internal class NPC : Room
 
     internal override string CreateDescription() => "";
 
-    internal override void ReceiveChoice(string choice)
-    {
-        Introduce();
-        Dialog();
-        Interact(choice);
-    }
 }

@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SaveData.cs" />
+    <Compile Include="SaveGameManager.cs" />
     <Compile Include="NPC%27s\Gardener.cs" />
     <Compile Include="NPC%27s\Medic.cs" />
     <Compile Include="NPC%27s\NPC.cs" />

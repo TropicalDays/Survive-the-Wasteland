@@ -7,6 +7,9 @@ namespace Survive_the_Wasteland
     internal class Game
     {
         public static Inventory playerInventory = new Inventory();
+        public static TimeSpan playerHealth = TimeSpan.FromMinutes(4);
+        private static SaveData currentSaveData;
+
 
         List<Room> rooms = new List<Room>();
         Room currentRoom;
@@ -51,6 +54,29 @@ namespace Survive_the_Wasteland
                     currentRoom = room;
                     break;
                 }
+            }
+        }
+
+        internal void SaveProgress()
+        {
+            currentSaveData = new SaveData
+            {
+                CurrentRoom = currentRoom.GetType().Name,
+                CurrentHealth = playerHealth,
+                CollectedItems = playerInventory.GetItems()
+            };
+
+            SaveGameManager.SaveGame(currentSaveData);
+            Console.WriteLine("Progress saved. Press any key to continue.");
+            Console.ReadKey();
+        }
+
+        internal static void LoadProgress()
+        {
+            currentSaveData = SaveGameManager.LoadGame();
+            if (currentSaveData != null)
+            {
+                Console.WriteLine("Progress loaded.");
             }
         }
     }
