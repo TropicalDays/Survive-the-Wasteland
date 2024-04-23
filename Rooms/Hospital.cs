@@ -14,6 +14,7 @@ namespace Survive_the_Wasteland.Rooms
         internal static string generatedPassword;
         internal int count = 0;
         private bool foundCode = false;
+        public static bool hasFoundMedkit = false;
 
         internal override string CreateDescription() => @"1. [supplies] 10 minutes, There might be medical supplies or useful items left behind.
 2. [wander] 15 minutes, Consider conducting an examination of the expansive hospital premises to search for any potential survivors.
@@ -29,6 +30,13 @@ namespace Survive_the_Wasteland.Rooms
                 case "1":
                     Program.initialVulnerability -= TimeSpan.FromSeconds(10);
                     Console.WriteLine("You explore the cabinets for any medical supplies and stumble upon a valuable medkit. Although unsure of how to properly\n use it, you decide to hold onto it.");
+                    Item medkit = new Item("Medkit", $"A versatile medkit capable of providing assistance for various injuries.");
+                    Game.playerInventory.AddItem(medkit);
+                    hasFoundMedkit = true;
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("\n +1 Medkit");
+                    Console.ResetColor();
+
                     break;
                 case "wander":
                 case "2":

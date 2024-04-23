@@ -8,8 +8,8 @@ namespace Survive_the_Wasteland.Rooms
 {
     internal class Wastelands : Room
     {
-        private bool repairKitFound = false;
-        private bool suitAndGasMaskFound = true;
+        public static bool repairKitFound = false;
+        private bool suitAndGasMaskFound = false;
 
         internal override string CreateDescription() => @"1. [Search] 15 minutes, Scour the wasteland for valuable resources amidst the toxic hazards.
 2. [investigate] 15 minutes, Approach the decrepit building to see if there are any salvageable items or clues inside.
@@ -27,8 +27,8 @@ namespace Survive_the_Wasteland.Rooms
                     {
                         Program.initialVulnerability -= TimeSpan.FromSeconds(15);
                         Console.WriteLine("Exploring the wasteland, you stumble upon a repair kit, essential for restoring any broken equipment you may encounter.");
-                        Item medkit = new Item("Repair Kit", "Restores broken equipment.");
-                        Game.playerInventory.AddItem(medkit);
+                        Item RepairKit = new Item("Repair Kit", "Restores broken equipment.");
+                        Game.playerInventory.AddItem(RepairKit);
                         repairKitFound =true;
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("\n +1 Repair Kit!");

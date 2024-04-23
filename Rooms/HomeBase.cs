@@ -51,20 +51,38 @@ valuable insights.
                     Console.WriteLine("Who would you like to interact with?");
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine("\n--------------------------------------------");
-                    Console.WriteLine("1. [Medic]");
-                    Console.WriteLine("2. [Gardener]");
+                    Console.WriteLine("1. [smith]");
+                    Console.WriteLine("2. [gardener]");
+                    Console.WriteLine("3. [engineer]");
+                    Console.WriteLine("4. [medic]");
+                    Console.WriteLine("5. [return]");
                     Console.ResetColor();
                     // Add more NPCs as needed
                     string npcChoice = Console.ReadLine()?.ToLower() ?? "";
                     switch (npcChoice)
                     {
-                        case "medic":
+                        case "smith":
                         case "1":
-                            Game.Transition<Medic>();
+                            Console.Clear();
+                            Game.Transition<Smith>();
                             break;
                         case "gardener":
                         case "2":
+                            Console.Clear();
                             Game.Transition<Gardener>();
+                            break;
+                        case "engineer":
+                        case "3":
+                            Console.Clear();
+                            Game.Transition<Engineer>();
+                            break;
+                        case "medic":
+                        case "4":
+                            Game.Transition<Medic>();
+                            break;
+                        case "return":
+                        case "5":
+                            Console.Clear();
                             break;
                         default:
                             Console.WriteLine("Invalid NPC choice.");

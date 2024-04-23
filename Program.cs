@@ -8,6 +8,8 @@ internal class Program
     public static bool isProtecting = false;
     public static TimeSpan initialVulnerability = TimeSpan.FromMinutes(4);
     public static Stopwatch stopwatch = new Stopwatch();
+    public static Stopwatch totalTimeStopWatch = new Stopwatch();
+    public static int deathCounter = 0;
 
     static void Main(string[] args)
     {
@@ -19,21 +21,26 @@ internal class Program
         game.Add(new ToxicWasteDump());
         game.Add(new Hospital());
         game.Add(new NPC());
+        game.Add(new Death());
 
-        game.Add(new Medic("Dr. Lith"));
+        game.Add(new Smith("Bert"));
         game.Add(new Gardener("Eyva"));
+        game.Add(new Engineer("Emerson"));
+        game.Add(new Medic("Dr. Luth"));
 
         stopwatch.Start();
+        totalTimeStopWatch.Start();
 
         RunGameLoop(game);
 
         stopwatch.Stop();
+        totalTimeStopWatch.Stop();
+        
+        TimeSpan totalElapsedTime = totalTimeStopWatch.Elapsed;
 
-        TimeSpan elapsedTime = stopwatch.Elapsed;
+        Console.WriteLine($"\nTotal time elapsed: {totalElapsedTime}");
 
-        Console.WriteLine($"Total time elapsed: {elapsedTime}");
-
-        Console.WriteLine("END");
+        Console.WriteLine("\nEND");
         Console.ReadLine();
     }
 
@@ -67,8 +74,15 @@ internal class Program
                 Console.WriteLine($"Infected Timer: {remainingVulnerability.Minutes}h {remainingVulnerability.Seconds}m\n");
                 Console.ResetColor();
             }
+
+            if (remainingVulnerability <= TimeSpan.Zero)
+            {
+                Game.Transition<Death>();
+            }
             Console.WriteLine(game.CurrentRoomDescription);
+            Console.ForegroundColor = ConsoleColor.Blue;
             string choice = Console.ReadLine()?.ToLower() ?? "";
+            Console.ResetColor();
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             game.ReceiveChoice(choice);

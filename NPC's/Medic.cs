@@ -1,34 +1,58 @@
-﻿using System;
+﻿using Survive_the_Wasteland;
+using Survive_the_Wasteland.Rooms;
+using System;
 
 internal class Medic : NPC
 {
+    public static bool hasBeenHelped = false;
+
     public Medic(string name) : base(name, NPCType.Medic)
     {
     }
 
-    public override void Introduce()
-    {
-        Console.WriteLine($"Hello, I'm {Name}, your friendly neighborhood medic!");
-    }
+    internal override string CreateDescription() => $@"1. [conversation] Engage in a conversation with {Name} regarding nursing.
+2. [help] Let {Name} treat you.
+3. [return] Return to the main part of the Home Base.
+4. [inventory] Display your inventory";
 
-    public override void Dialog()
-    {
-        Console.WriteLine($"{Name}: How can I help you?");
-        Console.WriteLine("You can ask about health, request medical supplies, or anything else you need.");
-    }
 
-    public override void Interact(string choice)
+    internal override void ReceiveChoice(string choice)
     {
         switch (choice)
         {
-            case "health":
+            case "conversation":
             case "1":
-                Console.WriteLine($"{Name} says: I can help you with medical supplies if you need.");
+                Console.WriteLine($"{Name}: Interacting with clients brings me immense satisfaction, and witnessing the smiles of fellow survivors serves\n as a powerful source of motivation for me.");
                 break;
-            case "supplies":
+            case "help":
             case "2":
-                Console.WriteLine($"{Name} says: Sure, I have some supplies for you.");
-                // Add code to give medical supplies to the player
+                if (Hospital.hasFoundMedkit)
+                {
+                    if (!hasBeenHelped)
+                    {
+                        Console.WriteLine($"You're being cared for by {Name}, and it's as if your injured leg never experienced any discomfort in the first place.");
+                        hasBeenHelped = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"You seem to be in perfect shape!");
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine($"You seem to be in perfect shape!");
+                }
+
+                break;
+            case "return":
+            case "3":
+                Game.Transition<HomeBase>();
+                break;
+            case "inventory":
+            case "4":
+                Console.WriteLine("You look inside your inventory.");
+                Game.playerInventory.DisplayInventory();
                 break;
             default:
                 Console.WriteLine($"{Name} doesn't respond to that.");

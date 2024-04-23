@@ -12,8 +12,8 @@ namespace Survive_the_Wasteland.Rooms
         private bool enteredCode = false;
 
         private Random random = new Random();
-        private bool wornBladeFound = false;
         public static bool injuredLeg = false;
+        public static bool wornBladeFound = false;
 
         
 
@@ -36,7 +36,7 @@ namespace Survive_the_Wasteland.Rooms
                     char answer = Convert.ToChar(Console.ReadLine());
                     if (answer == 'y')
                     {
-                        if (wornBladeFound)
+                        if (Smith.newBlade)
                         {
                             Console.Clear();
                             Console.WriteLine("You bravely engage the mutant creature and emerge victorious, though not unscathed. It appears you may have\n sustained a minor injury to your leg. Exercise caution as you proceed.\n");
@@ -82,7 +82,7 @@ namespace Survive_the_Wasteland.Rooms
                     break;
                 case "search":
                 case "2":
-                    if (!wornBladeFound)
+                    if (!Smith.newBlade)
                     {
                         Program.initialVulnerability -= TimeSpan.FromSeconds(15);
                         Console.WriteLine("You explore your surroundings, hoping to find something of worth, and come across a worn blade.\n");
@@ -124,7 +124,8 @@ namespace Survive_the_Wasteland.Rooms
                                 Console.WriteLine("You'll notice something akin to a Scuba tank, enhancing your ability to travel extended distances while ensuring a \ncontinuous supply of fresh air.");
                                 Item tank = new Item("Scuba Tank", "Enhancing your journey's reach, a scuba tank provides extended travel capabilities");
                                 Game.playerInventory.AddItem(tank);
-                                Console.ForegroundColor = ConsoleColor.Yellow;
+                                InfestedForests.haveEquipment = true;
+                                Console.ForegroundColor = ConsoleColor.Green;
                                 Console.WriteLine("\n +1 Scuba Tank");
                                 Console.ResetColor();
                                 Console.Write("\nPress \"Enter\" to continue...");
